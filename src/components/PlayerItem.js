@@ -3,20 +3,19 @@ import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 
 const PlayerItem = (props) => {
-  const { player, buttonColor } = props;
-  console.log(player);
+  const { player, buttonColor, navigation } = props;
   return (
     <View style={styles.buttonStyle}>
       <Button
         raised
-        buttonStyle={{ backgroundColor: buttonColor, borderRadius: 3 }}
+        buttonStyle={{ backgroundColor: buttonColor, borderRadius: 2 }}
         textStyle={{
           textAlign: 'center', fontFamily: 'Arial',
           fontWeight: '500'
         }}
         title={player.toUpperCase()}
         onPress={() => {
-          console.log('pressed');
+          navigation.navigate('Tweets', {player});
         }
         }
       />

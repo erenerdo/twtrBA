@@ -5,6 +5,7 @@ import { StackNavigator } from 'react-navigation';
 import Home from './src/components/Home';
 import Teams from './src/components/Teams';
 import Players from './src/components/Players';
+import Tweets from './src/components/Tweets';
 
 import axios from 'axios';
 
@@ -38,6 +39,12 @@ const NavApp = StackNavigator({
     screen: Players,
     navigationOptions: {
       headerTitle: 'Players'
+    }
+  },
+  Tweets: {
+    screen: Tweets,
+    navigationOptions: {
+      headerTitle: 'Tweets'
     }
   }
 });

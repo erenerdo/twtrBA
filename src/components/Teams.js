@@ -4,7 +4,6 @@ import NBA from '../TeamData';
 import TeamItem from './TeamItem';
 
 const Teams = ({ navigation }) => {
-  console.log('Team', navigation)
   return (
     <View style={styles.teamsStyle}>
       <ScrollView>

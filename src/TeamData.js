@@ -62,7 +62,7 @@ export const DetroitPistons = {
 };
 
 export const GoldenStateWarriors = {
-  name: 'Golden State Warrios',
+  name: 'Golden State Warriors',
   players: ['Stephen Curry', 'Klay Thompson', 'Kevin Durant', 'Draymond Green', 'Zaza Pachulia'],
   buttonColor: '#003DA5',
   backgroundColor: '#FFC72D'

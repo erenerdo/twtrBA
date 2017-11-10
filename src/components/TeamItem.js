@@ -7,12 +7,12 @@ const TeamItem = ({team, navigation}) => {
     <View style={styles.buttonStyle}>
       <Button
       raised
-      buttonStyle={{backgroundColor: team.buttonColor, borderRadius: 3}}
+      buttonStyle={{backgroundColor: team.buttonColor, borderRadius: 2}}
       textStyle={{textAlign: 'center', fontFamily: 'Arial',
     fontWeight: '500'}}
       title={team.name.toUpperCase()}
       onPress={() => {
-        navigation.navigate('Players', {team});
+        navigation.navigate('Players', {team, navigation});
       }
       }
     />
