@@ -33,11 +33,11 @@ const styles = {
     marginBottom: 15
   },
   userNameStyles: {
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: 'Helvetica Neue'
   },
   screenNameStyles: {
-    fontSize: 20,
+    fontSize: 17,
     fontFamily: 'Helvetica Neue'
   },
   tweetTextStyles: {
@@ -46,7 +46,8 @@ const styles = {
   },
   imgStyle: {
     height: 50,
-    width: 50
+    width: 50,
+    borderRadius: 25
   },
   tweetViewStyles: {
     marginTop: 3,
