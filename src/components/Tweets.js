@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import axios from 'axios';
 import LoadingScreen from './LoadingScreen';
+import Header from 'react-native-elements';
 
 
 export default class Tweets extends Component {
@@ -34,15 +35,26 @@ export default class Tweets extends Component {
         </View>
       );
     }
+    console.log(this.state.tweets[0].text);
     return (
-      <ScrollView>
-        <Text> Tweets about {player} </Text>
-        <Text> {this.state.tweets[0].text} </Text>
-      </ScrollView>
+      <View>
+        <Text > {player} </Text>
+        <ScrollView>
+          <Text> {this.state.tweets[0].text} </Text>
+        </ScrollView>
+      </View>
     );
   }
 
   underName(name) {
     return name.split(' ').join('_');
+  }
+}
+
+const styles = {
+  nameStyle: {
+    fontWeight: '200',
+    fontSize: 500,
+    padding: 10
   }
 }

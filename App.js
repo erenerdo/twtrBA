@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     fontSize: 50
   },
   header: {
-    backgroundColor: '#003DA5'
+    backgroundColor: '#00aced',
   }
 });
 
@@ -32,19 +32,22 @@ const NavApp = StackNavigator({
   Teams: {
     screen: Teams,
     navigationOptions: {
-      headerTitle: 'Teams'
+      headerTitle: 'Teams',
+      headerStyle: styles.header
     }
   },
   Players: {
     screen: Players,
     navigationOptions: {
-      headerTitle: 'Players'
+      headerTitle: 'Players',
+      headerStyle: styles.header
     }
   },
   Tweets: {
     screen: Tweets,
     navigationOptions: {
-      headerTitle: 'Tweets'
+      headerTitle: 'Tweets',
+      headerStyle: styles.header
     }
   }
 });
