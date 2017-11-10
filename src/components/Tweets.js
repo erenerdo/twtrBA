@@ -15,7 +15,7 @@ export default class Tweets extends Component {
   componentDidMount() {
     const { player } = this.props.navigation.state.params;
     const formattedName = this.underName(player);
-    console.log(formattedName);
+
     axios.get(`http://localhost:3000/${formattedName}`)
       .then(res => {
         return res.data.statuses;

@@ -42,7 +42,7 @@ export const ClevelandCavaliers = {
 
 export const DallasMavericks = {
   name: 'Dallas Mavericks',
-  players: ['Dennis Smith Jr', 'Wesley Matthews', 'Harrison Barnes', 'Dirk Nowitzki', 'Nerles Noel'],
+  players: ['Dennis Smith Jr', 'Wesley Matthews', 'Harrison Barnes', 'Dirk Nowitzki', 'Nerlens Noel'],
   buttonColor: '#0050B5',
   backgroundColor: '#8D9093'
 };

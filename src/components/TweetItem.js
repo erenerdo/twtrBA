@@ -1,17 +1,24 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 const TweetItem = (props) => {
   console.log(props.tweet.user.profile_image_url);
   return (
     <View style={styles.itemStyles}>
-      <View>
-        <Image source={{ uri: props.tweet.user.profile_image_url }} style={styles.imgStyle} />
-        <Text style={styles.userNameStyles}>{props.tweet.user.name}</Text>
-        <Text style={styles.screenNameStyles}>@{props.tweet.user.screen_name}</Text>
+      <View style={{flex: 1}}>
+        <View>
+          <Image source={{ uri: props.tweet.user.profile_image_url }} style={styles.imgStyle} />
+        </View>
+
+        <View style={styles.userInfo}>
+          <Text style={styles.userNameStyles}>{props.tweet.user.name}</Text>
+          <Text style={styles.screenNameStyles}>@{props.tweet.user.screen_name}</Text>
+        </View>
+
       </View>
       <View style={styles.tweetViewStyles}>
         <Text style={styles.tweetTextStyles}>{props.tweet.text}</Text>
+
       </View>
     </View>
   );
@@ -26,24 +33,47 @@ const styles = {
     marginBottom: 15
   },
   userNameStyles: {
-    fontSize: 20,
+    fontSize: 22,
     fontFamily: 'Helvetica Neue'
   },
   screenNameStyles: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'Helvetica Neue'
   },
   tweetTextStyles: {
-    fontSize: 14,
+    fontSize: 15,
     fontFamily: 'Helvetica Neue'
   },
   imgStyle: {
-    height: 1,
-    width: 1
+    height: 50,
+    width: 50
   },
   tweetViewStyles: {
     marginTop: 3,
     marginLeft: 10
+  },
+  textStyle: {
+    alignSelf: 'center',
+    color: '#007aff',
+    fontSize: 16,
+    fontWeight: '600',
+    paddingTop: 5,
+    paddingBottom: 5
+  },
+  buttonStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#007aff',
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 5,
+    marginBottom: 5
+  },
+  userInfo: {
+    marginLeft: 5
   }
 };
 
