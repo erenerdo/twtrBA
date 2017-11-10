@@ -51,16 +51,6 @@ const NavApp = StackNavigator({
 
 export default class App extends React.Component {
 
-  componentDidMount() {
-    // axios.get('http://localhost:3000/james_harden')
-    //   .then(res => {
-    //     return res.data.statuses;
-    //   })
-    //   .then(data => {
-    //     console.log(data);
-    //   })
-    //   .catch(console.error);
-  }
   render() {
 
     return (
