@@ -13,5 +13,8 @@
   "name": "twtrba2",
   "version": "0.0.0",
   "description": "Hello Expo!",
-  "author": null
+  "author": null,
+  "rnpm": {
+    "assets": ["./Oswald"]
+ }
 }

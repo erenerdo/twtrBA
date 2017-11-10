@@ -3,22 +3,23 @@ import { Text, View, ScrollView } from 'react-native';
 import NBA from '../TeamData';
 import TeamItem from './TeamItem';
 
-export default class Teams extends React.Component {
-
-  render() {
-    return (
-      <View style={styles.teamsStyle}>
-        <ScrollView>
-          {
-            NBA.map(team => {
-              return (<TeamItem team={team} key={team.name} />);
-            })
-          }
-        </ScrollView>
-      </View>
-    );
-  }
+const Teams = ({ navigation }) => {
+  console.log('Team', navigation)
+  return (
+    <View style={styles.teamsStyle}>
+      <ScrollView>
+        <View>
+        {
+          NBA.map(team => {
+            return (<TeamItem team={team} key={team.name} navigation={navigation} />);
+          })
+        }
+        </View>
+      </ScrollView>
+    </View>
+  );
 }
+
 
 const styles = {
   teamsStyle: {
@@ -26,3 +27,4 @@ const styles = {
   }
 };
 
+export default Teams;

@@ -4,7 +4,7 @@ import { Header } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Home from './src/components/Home';
 import Teams from './src/components/Teams';
-
+import Players from './src/components/Players';
 
 import axios from 'axios';
 
@@ -33,21 +33,27 @@ const NavApp = StackNavigator({
     navigationOptions: {
       headerTitle: 'Teams'
     }
+  },
+  Players: {
+    screen: Players,
+    navigationOptions: {
+      headerTitle: 'Players'
+    }
   }
 });
 
 export default class App extends React.Component {
 
-  // componentDidMount() {
-  //   axios.get('http://localhost:3000/james_harden')
-  //     .then(res => {
-  //       return res.data.statuses;
-  //     })
-  //     .then(data => {
-  //       console.log(data);
-  //     })
-  //     .catch(console.error);
-  // }
+  componentDidMount() {
+    // axios.get('http://localhost:3000/james_harden')
+    //   .then(res => {
+    //     return res.data.statuses;
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    //   .catch(console.error);
+  }
   render() {
 
     return (
