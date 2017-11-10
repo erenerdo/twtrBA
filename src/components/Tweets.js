@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import axios from 'axios';
+import LoadingScreen from './LoadingScreen';
 
 
 export default class Tweets extends Component {
@@ -29,7 +30,7 @@ export default class Tweets extends Component {
     if (this.state.tweets.length === 0) {
       return (
         <View>
-          <Text> Loading tweets regarding {player} </Text>
+          <LoadingScreen />
         </View>
       );
     }
