@@ -15,7 +15,7 @@ const PlayerItem = (props) => {
         }}
         title={player.toUpperCase()}
         onPress={() => {
-          navigation.navigate('Tweets', {player});
+          navigation.navigate('Tweets', {player, buttonColor});
         }
         }
       />

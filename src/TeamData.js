@@ -56,7 +56,7 @@ export const DenverNuggets = {
 
 export const DetroitPistons = {
   name: 'Detroit Pistons',
-  players: ['Reggie Jackson', 'Avery Bradley', 'Stanley Johnson', 'Tobias Harris'],
+  players: ['Reggie Jackson', 'Avery Bradley', 'Stanley Johnson', 'Tobias Harris', 'Andre Drummond'],
   buttonColor: '#003DA5',
   backgroundColor: '#D50032'
 };

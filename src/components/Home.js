@@ -10,6 +10,12 @@ const Home = ({ navigation }) => {
       <View style={styles.welcomeViewStyles}>
         <Text style={styles.welcomeTextStyles}>Welcome to twtrBA</Text>
       </View>
+      <View style={styles.infoViewStyles}>
+        <Text style={styles.infoTextStyles}>
+          The dopest place to see what people are tweeting about the NBA
+        </Text>
+      </View>
+
       <View style={styles.imgViewStyle}>
         <Image
           style={styles.imgStyle}
@@ -54,7 +60,20 @@ const styles = StyleSheet.create({
     marginBottom: 50
   },
   buttonStyle: {
-    paddingBottom: 200,
+    paddingBottom: 150,
+  },
+  infoViewStyles: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginLeft: 25,
+    marginRight: 25,
+    paddingBottom: 20
+  },
+  infoTextStyles: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#FFFFFF'
   }
 });
 

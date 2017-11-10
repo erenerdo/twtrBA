@@ -3,7 +3,7 @@ import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import axios from 'axios';
 import LoadingScreen from './LoadingScreen';
 import Header from 'react-native-elements';
-
+import TweetItem from './TweetItem';
 
 export default class Tweets extends Component {
   constructor(props) {
@@ -26,8 +26,8 @@ export default class Tweets extends Component {
       .catch(console.error);
   }
   render() {
-    const { player } = this.props.navigation.state.params;
-    console.log('rendered');
+    const { player, buttonColor } = this.props.navigation.state.params;
+
     if (this.state.tweets.length === 0) {
       return (
         <View>
@@ -37,10 +37,16 @@ export default class Tweets extends Component {
     }
     console.log(this.state.tweets[0].text);
     return (
-      <View>
-        <Text > {player} </Text>
+      <View style={{backgroundColor: buttonColor}}>
+        <View style={styles.playerViewStyles}>
+          <Text style={styles.playerTextStyles}> {player} </Text>
+        </View>
         <ScrollView>
-          <Text> {this.state.tweets[0].text} </Text>
+        {
+          this.state.tweets.map(tweet => {
+            return (<TweetItem key={tweet.id} tweet={tweet} />);
+          })
+        }
         </ScrollView>
       </View>
     );
@@ -56,5 +62,16 @@ const styles = {
     fontWeight: '200',
     fontSize: 500,
     padding: 10
+  },
+  playerTextStyles: {
+    fontSize: 35,
+    fontWeight: '600',
+    color: '#FFFFFF'
+  },
+  playerViewStyles: {
+    marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative'
   }
 }
