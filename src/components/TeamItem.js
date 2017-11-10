@@ -7,7 +7,7 @@ const TeamItem = ({team, navigation}) => {
     <View style={styles.buttonStyle}>
       <Button
       raised
-      buttonStyle={{backgroundColor: team.buttonColor, borderRadius: 5}}
+      buttonStyle={{backgroundColor: team.buttonColor, borderRadius: 3}}
       textStyle={{textAlign: 'center', fontFamily: 'Arial',
     fontWeight: '500'}}
       title={team.name.toUpperCase()}
@@ -22,7 +22,8 @@ const TeamItem = ({team, navigation}) => {
 
 const styles = {
   buttonStyle: {
-    paddingTop: 10
+    padding: 5,
+    paddingBottom: 5
   }
 };
 

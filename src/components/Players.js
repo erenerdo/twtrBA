@@ -1,17 +1,21 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
+import PlayerItem from './PlayerItem';
 
 const Players = (props) => {
   const {name, players, buttonColor, backgroundColor} = props.navigation.state.params.team;
+
   return (
-    <View>
+    <ScrollView style={{backgroundColor}}>
     {
       players.map(player => {
-        return (<Text key={player}>{player}</Text>);
+        return (<PlayerItem key={player} player={player} buttonColor={buttonColor} />);
       })
     }
-    </View>
+    </ScrollView>
+
   );
 };
+
 
 export default Players;

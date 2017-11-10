@@ -23,7 +23,7 @@ const Teams = ({ navigation }) => {
 
 const styles = {
   teamsStyle: {
-    backgroundColor: '#00aced'
+    backgroundColor: 'white'
   }
 };
 
