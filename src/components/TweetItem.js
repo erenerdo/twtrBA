@@ -30,7 +30,7 @@ const styles = {
     fontFamily: 'Helvetica Neue'
   },
   screenNameStyles: {
-    fontSize: 17,
+    fontSize: 16,
     fontFamily: 'Helvetica Neue'
   },
   tweetTextStyles: {
