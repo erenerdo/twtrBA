@@ -1,15 +1,28 @@
 import React from 'react';
-import { Text, View} from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
+import NBA from '../TeamData';
+import TeamItem from './TeamItem';
 
 export default class Teams extends React.Component {
 
   render() {
-        return (
-          <View>
-              <Text>Cleveland Cavaliers</Text>
-          </View>
-        );
-      }
+    return (
+      <View style={styles.teamsStyle}>
+        <ScrollView>
+          {
+            NBA.map(team => {
+              return (<TeamItem team={team} key={team.name} />);
+            })
+          }
+        </ScrollView>
+      </View>
+    );
+  }
 }
 
+const styles = {
+  teamsStyle: {
+    backgroundColor: '#00aced'
+  }
+};
 
