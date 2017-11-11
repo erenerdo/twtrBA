@@ -1,25 +1,37 @@
 import React from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Linking } from 'react-native';
+import TweetSection from './TweetSection';
+
+const urlify = (tweet) => {
+  if (tweet.text.slice(0, 3) === 'RT ') {
+    return `https://twitter.com/${tweet.entities.user_mentions[0].screen_name}/status/${tweet.id_str}`;
+  } else {
+    return `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`;
+  }
+};
 
 const TweetItem = (props) => {
-  console.log(props.tweet.user.profile_image_url);
   return (
     <View style={styles.itemStyles}>
-      <View style={{flex: 1}}>
-        <View>
+      <TweetSection>
+        <View style={styles.thumbnailContainerStyle}>
           <Image source={{ uri: props.tweet.user.profile_image_url }} style={styles.imgStyle} />
         </View>
 
-        <View style={styles.userInfo}>
+        <View style={styles.headerContentStyles}>
           <Text style={styles.userNameStyles}>{props.tweet.user.name}</Text>
           <Text style={styles.screenNameStyles}>@{props.tweet.user.screen_name}</Text>
         </View>
+      </TweetSection>
 
-      </View>
       <View style={styles.tweetViewStyles}>
         <Text style={styles.tweetTextStyles}>{props.tweet.text}</Text>
-
       </View>
+      <TouchableOpacity onPress={() => Linking.openURL(urlify(props.tweet))} style={styles.buttonStyle}>
+        <Text style={styles.textStyle}>
+          View On Twitter
+      </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -33,15 +45,15 @@ const styles = {
     marginBottom: 15
   },
   userNameStyles: {
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: 'Helvetica Neue'
   },
   screenNameStyles: {
-    fontSize: 17,
+    fontSize: 16,
     fontFamily: 'Helvetica Neue'
   },
   tweetTextStyles: {
-    fontSize: 15,
+    fontSize: 18,
     fontFamily: 'Helvetica Neue'
   },
   imgStyle: {
@@ -75,6 +87,16 @@ const styles = {
   },
   userInfo: {
     marginLeft: 5
+  },
+  headerContentStyles: {
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10
   }
 };
 

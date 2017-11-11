@@ -35,7 +35,6 @@ export default class Tweets extends Component {
         </View>
       );
     }
-    console.log(this.state.tweets[0].text);
     return (
       <View style={{backgroundColor: buttonColor}}>
         <View style={styles.playerViewStyles}>
