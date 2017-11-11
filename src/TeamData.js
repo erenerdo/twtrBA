@@ -70,7 +70,7 @@ export const GoldenStateWarriors = {
 
 export const HoustonRockets = {
   name: 'Houston Rockets',
-  players: ['James Harden', 'Eric Gordon', 'Trevor Ariza', 'Ryan Anderson', 'Clint Capela'],
+  players: ['James Harden', 'Chris Paul', 'Trevor Ariza', 'Ryan Anderson', 'Clint Capela'],
   buttonColor: '#BA0C2F',
   backgroundColor: '#8D9093'
 };
