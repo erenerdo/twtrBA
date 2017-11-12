@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
       </View>
       <View style={styles.infoViewStyles}>
         <Text style={styles.infoTextStyles}>
-          The dopest place to see what people are tweeting about the NBA
+          What are people tweeting about NBA players?
         </Text>
       </View>
 

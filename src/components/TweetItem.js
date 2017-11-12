@@ -10,6 +10,45 @@ const urlify = (tweet) => {
   }
 };
 
+const dateify = (tweet) => {
+  const dateArr = tweet.created_at.split(' ');
+  const time = dateArr[3].split(':');
+  let timeOf = '';
+  time[0] = +time[0] - 5;
+
+  const dateShift = {
+    Mon: 'Sun',
+    Tue: 'Mon',
+    Wed: 'Tue',
+    Thu: 'Wed',
+    Fri: 'Thu',
+    Sat: 'Fri',
+    Sun: 'Sat'
+  };
+
+  if (time[0] < 5) {
+    dateArr[0] = dateShift[dateArr[0]];
+    dateArr[2] = +dateArr[2] - 1;
+  }
+
+  if (time[0] === 0) {
+    time[0] = 12;
+  } else if (time[0] < 0) {
+    time[0] = +time[0] + 24;
+  }
+  if (+time[0] > 12) {
+    time[0] = +time[0] - 12;
+    timeOf = ' PM';
+  }
+  else {
+    timeOf = ' AM';
+  }
+
+
+  // console.log(time.join(':') + timeOf );
+  return `${dateArr[0]} ${time.join(':') + timeOf} ${dateArr[1]} ${dateArr[2]} ${dateArr[dateArr.length - 1]}`;
+};
+
 const TweetItem = (props) => {
   return (
     <View style={styles.itemStyles}>
@@ -26,6 +65,12 @@ const TweetItem = (props) => {
 
       <View style={styles.tweetViewStyles}>
         <Text style={styles.tweetTextStyles}>{props.tweet.text}</Text>
+      </View>
+      <View style={{ marginLeft: 10, marginTop: 10, marginBottom: 5 }}>
+        <Text>{`Favorites: ${props.tweet.favorite_count}     Retweets: ${props.tweet.retweet_count}`}</Text>
+      </View>
+      <View style={{ marginLeft: 10, marginTop: 1, marginBottom: 5 }}>
+        <Text>{dateify(props.tweet)}</Text>
       </View>
       <TouchableOpacity onPress={() => Linking.openURL(urlify(props.tweet))} style={styles.buttonStyle}>
         <Text style={styles.textStyle}>

@@ -10,7 +10,7 @@ export default class Tweets extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tweets: []
+      tweets: null
     };
   }
   componentDidMount(filter) {
@@ -31,7 +31,7 @@ export default class Tweets extends Component {
   render() {
     const { player, buttonColor } = this.props.navigation.state.params;
 
-    if (this.state.tweets.length === 0) {
+    if (this.state.tweets === null) {
       return (
         <View>
           <LoadingScreen />
