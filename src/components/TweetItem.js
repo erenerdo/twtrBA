@@ -87,11 +87,13 @@ const styles = {
     marginRight: 15,
     marginLeft: 15,
     marginTop: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    borderRadius: 10
   },
   userNameStyles: {
     fontSize: 16,
-    fontFamily: 'Helvetica Neue'
+    fontFamily: 'Helvetica Neue',
+    fontWeight: '700'
   },
   screenNameStyles: {
     fontSize: 16,
